@@ -1,0 +1,36 @@
+https://aka.ms/GHC19-GroverSearch
+
+Other algorithms: Shor's algorithms (1st major one)
+
+used for:
+*factor numbers
+*solve problems that dont' have efficient classical algorithms: symmetric cryptography (AES), hash functions
+*speed up classical algorithms: amplitude amplification
+
+fundamentals of quantum computing:
+2 keys to quantum computing:
+1. superposition - data stored in qbits, which can be in 0, 1, or superposition anywhere between 0 and 1 (amplitude); can do powerful computing when bits are in superposition
+
+2. measurement - way to get info out of quantum system by performing measurements on the states; once bits are measured, they collapse out of superposition -- must start experiment all over
+
+measuring horizontal = 0 100%
+measuring vertical = 1 100%
+measuring diagonal = 0 50%, 1 50% (so you can't measure the amplitude, you can only see if it's closer to 0 or to 1)
+
+proving algorithms -- some algorithms are predictive (what you think the answer is, you'll get that answer); must do algorithm with classical algorithms to prove that quantum is working correctly
+
+usually 4 dimensions of superposition (think quadrants of a circle) --
+but may also think of it in two states --
+1. equal superposition of m solution states
+2. equal superposition of n - m non-solution states
+
+Grover's algorithm goes through iterations:
+Step 1: reflect the state of the system across the vector -- uses quantum oracle/inverts our functions
+Step 2: reflect the state of the system across vector -- this has rotated the state of the system further from non-solutions (increase posibility of measuring good state and not measuring bad state)
+Step 3 and on: repeat the grover iterations 
+
+should only iterate until line is vertical; closer to the  --> pi/4 * square root of n/m
+
+need to know the number of right answers there are, and you need to know what angle the algorithm starts off from when first ran to determine # of iterations to do
+
+if you don't know # of iterations to do, try random iterations until you find correct amount
